@@ -23,6 +23,15 @@ class LinkedListNode():
 
 def delete_node(delete_this_node):
     # Your code here
+    # set my next to the node that i want to delete(s) next
+    next = delete_this_node.next
+    # does this node exist?
+    if next:
+        # set this nodes value to the value of the next node
+        delete_this_node.value = next.value
+        # set this nodes next to it next(s) next
+        delete_this_node.next = next.next
+
     pass
 
 
