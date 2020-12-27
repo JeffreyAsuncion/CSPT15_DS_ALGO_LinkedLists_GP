@@ -22,7 +22,8 @@ class LinkedListNode():
         self.next  = None
 
 def delete_node(delete_this_node):
-    # Your code here
+    # Note this function does not traverse the list to find the prev to delthisnode
+    # see LinkedList_CodeBasics to see how
     # set my next to the node that i want to delete(s) next
     next = delete_this_node.next
     # does this node exist?
@@ -30,7 +31,9 @@ def delete_node(delete_this_node):
         # set this nodes value to the value of the next node
         delete_this_node.value = next.value
         # set this nodes next to it next(s) next
-        delete_this_node.next = next.next
+        delete_this_node.next = next.next # or to None
+    else:
+        raise Exception("This technique does not work for the last node in the list")
 
     pass
 
